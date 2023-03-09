@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
@@ -9,4 +9,4 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return jsonify("Hello, World")
